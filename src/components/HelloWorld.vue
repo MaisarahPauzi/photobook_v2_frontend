@@ -26,7 +26,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      img_src:'https://backendlessappcontent.com/D6E5A353-CD1B-1F0B-FF18-F4FCB3F3CF00/console/dzcfasxclleuwjnoxljtcwutqaoaqivsvizx/files/view/uploads/',
+      img_src:'https://backendlessappcontent.com/D6E5A353-CD1B-1F0B-FF18-F4FCB3F3CF00/24781313-4CE5-7BF9-FFC7-84519874BC00/files/uploads/',
       items:[],
     }
   },
