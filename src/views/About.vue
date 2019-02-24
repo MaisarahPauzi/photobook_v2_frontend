@@ -7,7 +7,7 @@
             <h3>About</h3>
           </v-card-title>
           <v-card-text>
-            <p>This application is done by Maisarah Mohamed Pauzi as a practical assessment <br> to learn how to use Vue JS with Backendless API</p>
+            <p>This application is done by Maisarah Mohamed Pauzi as a practical assessment <br> to learn how to use Vue JS with Laravel API</p>
           </v-card-text>
         </v-card>
       </v-layout>

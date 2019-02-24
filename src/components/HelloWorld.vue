@@ -14,6 +14,14 @@
                 <p>{{item.caption}}</p>
               </div>
             </v-card-title>
+            <v-card-actions>
+                  <v-spacer></v-spacer>
+                  <Popup :id="item.id" :title="item.title" :caption="item.caption" :filename="item.filename"></Popup>
+                  
+                  <v-btn  color="error" @click="deleteData(item,index)">
+                    <v-icon>delete</v-icon>DELETE
+                  </v-btn>
+            </v-card-actions>
         </v-card>
       </v-flex>
     </v-layout>
@@ -22,18 +30,22 @@
 
 <script>
 import axios from 'axios';
+import Popup from './Popup';
 export default {
   name: 'HelloWorld',
+  components:{
+      Popup,
+    },
   data () {
     return {
-      img_src:'https://backendlessappcontent.com/D6E5A353-CD1B-1F0B-FF18-F4FCB3F3CF00/24781313-4CE5-7BF9-FFC7-84519874BC00/files/uploads/',
+      img_src:'http://54.191.107.199/DemoProject/public/storage/',
       items:[],
     }
   },
   
   created() {
 
-    axios.get(`https://api.backendless.com/D6E5A353-CD1B-1F0B-FF18-F4FCB3F3CF00/24781313-4CE5-7BF9-FFC7-84519874BC00/data/storeimage`)
+    axios.get(`http://54.191.107.199/DemoProject/public/api/photobook`)
     .then(response => {
       // JSON responses are automatically parsed.
       this.items = response.data
@@ -43,6 +55,28 @@ export default {
     });
     
   },
+
+  methods:{
+    deleteData(item,index){
+        axios.delete( 'http://54.191.107.199/DemoProject/public/api/photobook/'+item.id
+            ).then(function(){
+          console.log('success');
+        })
+        .catch(function(){
+          console.log('failed');
+        });
+
+        axios.delete( 'http://54.191.107.199/DemoProject/public/api/delPhoto/'+item.filename
+            ).then(function(){
+          console.log('success delete file');
+        })
+        .catch(function(){
+          console.log('failed');
+        });
+
+        this.items.splice(index,1);
+      }
+  }
 
 
 }

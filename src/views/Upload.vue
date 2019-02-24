@@ -44,27 +44,8 @@ export default {
   methods:{
         submitData(){
 
-            let fileData = new FormData();
 
-            fileData.append('file', this.file);
-
-
-            axios.post( 'https://api.backendless.com/D6E5A353-CD1B-1F0B-FF18-F4FCB3F3CF00/24781313-4CE5-7BF9-FFC7-84519874BC00/files/uploads/'+this.file.name,
-                fileData,
-                {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                }
-              }
-            ).then(function(){
-          console.log('success');
-        })
-        .catch(function(){
-          console.log('failed');
-        });
-      
-
-        axios.post( 'https://api.backendless.com/D6E5A353-CD1B-1F0B-FF18-F4FCB3F3CF00/24781313-4CE5-7BF9-FFC7-84519874BC00/data/storeimage',
+        axios.post( 'http://54.191.107.199/DemoProject/public/api/photobook',
                 {
                   "title":this.title,
                   "caption":this.caption,
@@ -85,6 +66,27 @@ export default {
 
       handleFileUpload(){
         this.file = this.$refs.file.files[0];
+        
+            let fileData = new FormData();
+
+            fileData.append('file', this.file);
+
+
+            axios.post( 'http://54.191.107.199/DemoProject/public/api/upload',
+                fileData,
+                {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+              }
+            ).then(function(){
+          console.log('success');
+        })
+        .catch(function(){
+          console.log('failed');
+        });
+      
+
       }
   }
 }
