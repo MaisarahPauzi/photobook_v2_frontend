@@ -31,7 +31,6 @@ export default {
     return {
       title:'',
       caption:'',
-      img_src:'https://backendlessappcontent.com/D6E5A353-CD1B-1F0B-FF18-F4FCB3F3CF00/console/dzcfasxclleuwjnoxljtcwutqaoaqivsvizx/files/view/uploads/',
       images:[],
       file: '',
       items:[],
@@ -45,7 +44,7 @@ export default {
         submitData(){
 
 
-        axios.post( 'http://54.191.107.199/DemoProject/public/api/photobook',
+        axios.post( 'http://52.40.179.3/DemoProject/public/api/photobook',
                 {
                   "title":this.title,
                   "caption":this.caption,
@@ -72,7 +71,7 @@ export default {
             fileData.append('file', this.file);
 
 
-            axios.post( 'http://54.191.107.199/DemoProject/public/api/upload',
+            axios.post( 'http://52.40.179.3/DemoProject/public/api/upload',
                 fileData,
                 {
                 headers: {

@@ -38,14 +38,14 @@ export default {
     },
   data () {
     return {
-      img_src:'http://54.191.107.199/DemoProject/public/storage/',
+      img_src:'http://52.40.179.3/DemoProject/public/storage/',
       items:[],
     }
   },
   
   created() {
 
-    axios.get(`http://54.191.107.199/DemoProject/public/api/photobook`)
+    axios.get(`http://52.40.179.3/DemoProject/public/api/photobook`)
     .then(response => {
       // JSON responses are automatically parsed.
       this.items = response.data
@@ -58,7 +58,7 @@ export default {
 
   methods:{
     deleteData(item,index){
-        axios.delete( 'http://54.191.107.199/DemoProject/public/api/photobook/'+item.id
+        axios.delete( 'http://52.40.179.3/DemoProject/public/api/photobook/'+item.id
             ).then(function(){
           console.log('success');
         })
@@ -66,7 +66,7 @@ export default {
           console.log('failed');
         });
 
-        axios.delete( 'http://54.191.107.199/DemoProject/public/api/delPhoto/'+item.filename
+        axios.delete( 'http://52.40.179.3/DemoProject/public/api/delPhoto/'+item.filename
             ).then(function(){
           console.log('success delete file');
         })

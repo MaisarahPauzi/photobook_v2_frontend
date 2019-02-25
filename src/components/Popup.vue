@@ -79,7 +79,7 @@ export default {
     },
     methods:{
       updateData(){
-        axios.put( 'http://54.191.107.199/DemoProject/public/api/photobook/'+this.item_id,
+        axios.put( 'http://52.40.179.3/DemoProject/public/api/photobook/'+this.item_id,
                 {
                   "title":this.newtitle,
                   "caption":this.newcaption,
