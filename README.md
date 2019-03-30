@@ -1,5 +1,12 @@
 # photobook
+## Details
+```
+Frontend: Vue JS with Vuetify
+Backend: Laravel API
+Backend Hosting: AWS EC2 (apache2 with phpmyadmin)
+Database: MySQL
 
+```
 ## Project setup
 ```
 yarn install
